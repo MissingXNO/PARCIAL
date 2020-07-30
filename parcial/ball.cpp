@@ -5,7 +5,7 @@ ball::ball(QGraphicsItem *parent)
 {
     QTimer *movtimer = new QTimer();
     connect(movtimer,SIGNAL(timeout()),this,SLOT(move()));
-    movtimer->start(5);
+    movtimer->start(10);
 
     QTimer *acelerate = new QTimer();
     connect(acelerate,SIGNAL(timeout()),this,SLOT(change_speed()));
@@ -14,14 +14,16 @@ ball::ball(QGraphicsItem *parent)
 
 void ball::move()
 {
-    setPos(x(),y()+v);
+    setPos(x()+vx,y()+vy);
+    if(y()>400)
+        setPos(0,0);
 }
 
 void ball::change_speed()
 {
-    if(v<=vf)
+    if(vy<=vyf)
     {
-        v+=g;
+        vy+=g;
     }
 }
 

@@ -20,9 +20,10 @@ public slots:
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr);
 private:
-    float v=0;      //speed
+    float vx=1.4;     //speed in x
+    float vy=0;      //speed in y
     float g=0.1;   //equivalent of gravity
-    float vf=4.00;   //top-speed in free-fall
+    float vyf=4.00;   //top-speed in free-fall
 
 signals:
 
