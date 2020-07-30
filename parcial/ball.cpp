@@ -2,6 +2,7 @@
 #include "wall.h"
 #include "QDebug"
 #include "qdebug.h"
+#include <time.h>
 
 extern wall * Wall;
 
@@ -27,10 +28,10 @@ void ball::move()
             qDebug("colision");
             }
         }
-
+    srand(time(0));
     setPos(x()+vx,y()+vy);
     if(y()>400)
-        setPos(0,0);
+        setPos(rand()%400,rand()%400);
 }
 
 void ball::change_speed()
