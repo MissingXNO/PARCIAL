@@ -5,6 +5,7 @@
 #include "ui_mainwindow.h"
 #include <ui_mainwindow.h>
 #include <QGraphicsScene>
+#include <ball.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,6 +18,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    ball * Ball;
 
 private:
     Ui::MainWindow *ui;

@@ -7,6 +7,10 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     scene = new QGraphicsScene;
     ui->graphicsView->setScene(scene);
     scene->setSceneRect(0,0,400,400);
+
+    //add ball
+    Ball = new ball;
+    scene->addItem(Ball);
 }
 
 MainWindow::~MainWindow()
