@@ -20,7 +20,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     ball * Ball;
+    ball * Ball2;
+    ball * Ball3;
     wall * Wall;
+    wall * Wall2;
+    wall * Wall3;
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *scene;

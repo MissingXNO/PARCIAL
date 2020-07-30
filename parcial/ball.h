@@ -11,7 +11,7 @@ class ball : public QObject, public QGraphicsItem
 {
     Q_OBJECT
 public:
-    ball(QGraphicsItem * parent = 0);
+    ball(int x, int y);
     QTimer *movtimer;
     QTimer *acelerate;
 public slots:

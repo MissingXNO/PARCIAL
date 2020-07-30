@@ -5,7 +5,7 @@
 
 extern wall * Wall;
 
-ball::ball(QGraphicsItem *parent)
+ball::ball(int x, int y)
 {
     QTimer *movtimer = new QTimer();
     connect(movtimer,SIGNAL(timeout()),this,SLOT(move()));
@@ -14,6 +14,8 @@ ball::ball(QGraphicsItem *parent)
     QTimer *acelerate = new QTimer();
     connect(acelerate,SIGNAL(timeout()),this,SLOT(change_speed()));
     acelerate->start(10);
+
+    this->setPos(x,y);
 }
 
 void ball::move()
