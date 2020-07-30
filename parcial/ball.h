@@ -7,7 +7,7 @@
 #include <QTimer>
 #include <QPainter>
 
-class ball : public QObject, public QGraphicsEllipseItem
+class ball : public QObject, public QGraphicsItem
 {
     Q_OBJECT
 public:

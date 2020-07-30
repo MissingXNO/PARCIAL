@@ -6,6 +6,7 @@
 #include <ui_mainwindow.h>
 #include <QGraphicsScene>
 #include <ball.h>
+#include "wall.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,7 +20,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     ball * Ball;
-
+    wall * Wall;
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *scene;

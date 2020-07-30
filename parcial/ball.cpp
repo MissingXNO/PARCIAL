@@ -1,5 +1,9 @@
 #include "ball.h"
+#include "wall.h"
+#include "QDebug"
+#include "qdebug.h"
 
+extern wall * Wall;
 
 ball::ball(QGraphicsItem *parent)
 {
@@ -14,6 +18,13 @@ ball::ball(QGraphicsItem *parent)
 
 void ball::move()
 {
+    QList<QGraphicsItem *> colliding_items = collidingItems();
+    for(int i = 0, n = colliding_items.size(); i < n; i++){
+        if(typeid(*(colliding_items[i])) == typeid (wall) ){
+            qDebug("colision");
+            }
+        }
+
     setPos(x()+vx,y()+vy);
     if(y()>400)
         setPos(0,0);
@@ -21,6 +32,12 @@ void ball::move()
 
 void ball::change_speed()
 {
+    QList<QGraphicsItem *> colliding_items = collidingItems();
+    for(int i = 0, n = colliding_items.size(); i < n; i++){
+        if(typeid(*(colliding_items[i])) == typeid (wall) ){
+                qDebug("colision");
+            }
+        }
     if(vy<=vyf)
     {
         vy+=g;

@@ -11,6 +11,11 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     //add ball
     Ball = new ball;
     scene->addItem(Ball);
+
+    //add wall
+    Wall = new wall(80,200,100,20);
+    scene->addItem(Wall);
+
 }
 
 MainWindow::~MainWindow()
